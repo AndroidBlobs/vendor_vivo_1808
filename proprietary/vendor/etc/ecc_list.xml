@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EccTable>
+    <!--
+        The attribute definition for tag EccEntry:
+        - Ecc: the emergnecy number
+        - Category: the service category (From 3GPP TS24.008)
+            - Bit 1 (1): Police
+            - Bit 2 (2): Ambulance
+            - Bit 3 (4): Fire Brigade
+            - Bit 4 (8): Marine Guard
+            - Bit 5 (16): Mountain Rescue
+            - Bit 6 (32): Manually initiated eCall
+            - Bit 7 (64): Automatically initiated eCall
+            - Bit 8 (128): is spare and set to "0"
+        - Condition: there are following values:
+            - 0: ecc only when no sim
+            - 1: ecc always
+            - 2: MMI will show ecc but send to nw as normal call
+    -->
+
+    <!-- Add for China CTA -->
+    <EccEntry Ecc="110" Category="0" Condition="2" Plmn = "460 FFF" />
+    <EccEntry Ecc="119" Category="0" Condition="2" Plmn = "460 FFF" />
+    <EccEntry Ecc="120" Category="0" Condition="2" Plmn = "460 FFF" />
+    <EccEntry Ecc="122" Category="0" Condition="2" Plmn = "460 FFF" />
+    <!-- Support dial 999 under G+N/A case because CT network don't support
+         dial 999 without no CT SIM.
+    -->
+    <EccEntry Ecc="999" Category="0" Condition="2" Plmn = "460 FFF" />
+
+    <!-- vivo add by yiyuanlin for Emergency Number begin -->
+    <!-- Malaysis -->
+    <EccEntry Ecc="994" Category="0" Condition="2" Plmn = "502 11" />
+    <EccEntry Ecc="994" Category="0" Condition="2" Plmn = "502 153" />
+    <EccEntry Ecc="994" Category="0" Condition="1" Plmn = "502 FFF" />
+    <EccEntry Ecc="999" Category="0" Condition="1" Plmn = "502 FFF" />
+
+    <!-- Myanmar -->
+    <EccEntry Ecc="191" Category="0" Condition="2" Plmn = "414 FFF" />
+    <EccEntry Ecc="192" Category="0" Condition="2" Plmn = "414 FFF" />
+    <EccEntry Ecc="199" Category="0" Condition="2" Plmn = "414 FFF" />
+    <EccEntry Ecc="911" Category="0" Condition="2" Plmn = "414 FFF" />
+    <EccEntry Ecc="999" Category="0" Condition="2" Plmn = "414 FFF" />
+
+    <!-- India -->
+    <EccEntry Ecc="112" Category="0" Condition="2" Plmn = "404 FFF" />
+    <EccEntry Ecc="911" Category="0" Condition="2" Plmn = "404 FFF" />
+    <EccEntry Ecc="112" Category="0" Condition="2" Plmn = "405 FFF" />
+    <EccEntry Ecc="911" Category="0" Condition="2" Plmn = "405 FFF" />
+    <EccEntry Ecc="112" Category="0" Condition="2" Plmn = "406 FFF" />
+    <EccEntry Ecc="911" Category="0" Condition="2" Plmn = "406 FFF" />
+
+    <!-- Indonesia -->
+    <EccEntry Ecc="112" Category="0" Condition="1" Plmn = "510 FFF" />
+    <EccEntry Ecc="911" Category="0" Condition="1" Plmn = "510 FFF" />
+    <EccEntry Ecc="110" Category="0" Condition="2" Plmn = "510 FFF" />
+    <EccEntry Ecc="113" Category="0" Condition="2" Plmn = "510 FFF" />
+    <EccEntry Ecc="118" Category="0" Condition="2" Plmn = "510 FFF" />
+    <EccEntry Ecc="119" Category="0" Condition="2" Plmn = "510 FFF" />
+    <EccEntry Ecc="120" Category="0" Condition="2" Plmn = "510 FFF" />
+    <EccEntry Ecc="129" Category="0" Condition="2" Plmn = "510 FFF" />
+
+    <!-- Vietnam -->
+    <EccEntry Ecc="113" Category="0" Condition="2" Plmn = "452 FFF" />
+    <EccEntry Ecc="114" Category="0" Condition="2" Plmn = "452 FFF" />
+    <EccEntry Ecc="115" Category="0" Condition="2" Plmn = "452 FFF" />
+
+    <!-- Philippines -->
+    <EccEntry Ecc="117" Category="0" Condition="2" Plmn = "515 FFF" />
+
+    <!-- Pakistan -->
+    <EccEntry Ecc="15" Category="0" Condition="2" Plmn = "410 FFF" />
+    <EccEntry Ecc="16" Category="0" Condition="2" Plmn = "410 FFF" />
+    <EccEntry Ecc="115" Category="0" Condition="2" Plmn = "410 FFF" />
+
+    <!-- Lao -->
+    <EccEntry Ecc="1199" Category="0" Condition="2" Plmn = "457 FFF" />
+    <EccEntry Ecc="1195" Category="0" Condition="2" Plmn = "457 FFF" />
+    <EccEntry Ecc="1191" Category="0" Condition="2" Plmn = "457 FFF" />
+    <EccEntry Ecc="1190" Category="0" Condition="2" Plmn = "457 FFF" />
+    <EccEntry Ecc="1623" Category="0" Condition="2" Plmn = "457 FFF" />
+    <EccEntry Ecc="1169" Category="0" Condition="2" Plmn = "457 FFF" />
+
+    <!-- Thailand -->
+    <EccEntry Ecc="191" Category="1" Condition="2" Plmn = "520 FFF" />
+    <EccEntry Ecc="911" Category="1" Condition="1" Plmn = "520 FFF" />
+    <EccEntry Ecc="199" Category="4" Condition="2" Plmn = "520 FFF" />
+    <EccEntry Ecc="1669" Category="2" Condition="2" Plmn = "520 FFF" />
+
+    <!-- Cambodia -->
+    <EccEntry Ecc="117" Category="0" Condition="2" Plmn = "456 FFF" />
+    <EccEntry Ecc="118" Category="0" Condition="2" Plmn = "456 FFF" />
+    <EccEntry Ecc="119" Category="0" Condition="2" Plmn = "456 FFF" />
+
+    <!-- Sri Lanka -->
+    <EccEntry Ecc="110" Category="0" Condition="2" Plmn = "413 FFF" />
+    <EccEntry Ecc="118" Category="0" Condition="2" Plmn = "413 FFF" />
+    <EccEntry Ecc="119" Category="0" Condition="2" Plmn = "413 FFF" />
+    <EccEntry Ecc="1919" Category="0" Condition="2" Plmn = "413 FFF" />
+
+    <!-- Nepal -->
+    <EccEntry Ecc="100" Category="0" Condition="2" Plmn = "429 FFF" />
+    <EccEntry Ecc="101" Category="0" Condition="2" Plmn = "429 FFF" />
+    <EccEntry Ecc="102" Category="0" Condition="2" Plmn = "429 FFF" />
+    <EccEntry Ecc="103" Category="0" Condition="2" Plmn = "429 FFF" />
+    <EccEntry Ecc="130" Category="0" Condition="2" Plmn = "429 FFF" />
+    <EccEntry Ecc="911" Category="0" Condition="1" Plmn = "429 FFF" />
+
+    <!-- Bhutan -->
+    <EccEntry Ecc="110" Category="0" Condition="2" Plmn = "402 FFF" />
+    <EccEntry Ecc="111" Category="0" Condition="2" Plmn = "402 FFF" />
+    <EccEntry Ecc="112" Category="0" Condition="2" Plmn = "402 FFF" />
+    <EccEntry Ecc="113" Category="0" Condition="2" Plmn = "402 FFF" />
+    <EccEntry Ecc="219" Category="0" Condition="2" Plmn = "402 FFF" />
+
+    <!-- Bhutan -->
+    <EccEntry Ecc="110" Category="0" Condition="1" Plmn = "402 FFF" />
+    <EccEntry Ecc="111" Category="0" Condition="1" Plmn = "402 FFF" />
+    <EccEntry Ecc="112" Category="0" Condition="1" Plmn = "402 FFF" />
+    <EccEntry Ecc="113" Category="0" Condition="1" Plmn = "402 FFF" />
+    <EccEntry Ecc="219" Category="0" Condition="1" Plmn = "402 FFF" />
+
+    <!-- Russian -->
+    <EccEntry Ecc="101" Category="0" Condition="2" Plmn = "250 FFF" />
+    <EccEntry Ecc="102" Category="0" Condition="2" Plmn = "250 FFF" />
+    <EccEntry Ecc="103" Category="0" Condition="2" Plmn = "250 FFF" />
+
+    <!-- Singapore -->
+    <EccEntry Ecc="120" Category="0" Condition="1" Plmn = "525 FFF" />
+    <EccEntry Ecc="191" Category="0" Condition="1" Plmn = "525 FFF" />
+    <EccEntry Ecc="199" Category="0" Condition="1" Plmn = "525 FFF" />
+    <EccEntry Ecc="994" Category="0" Condition="1" Plmn = "525 FFF" />
+    <EccEntry Ecc="999" Category="0" Condition="1" Plmn = "525 FFF" />
+
+    <!-- Taiwan -->
+    <EccEntry Ecc="110" Category="1" Condition="2" Plmn = "466 FFF" />
+    <EccEntry Ecc="118" Category="0" Condition="2" Plmn = "466 FFF" />
+    <EccEntry Ecc="119" Category="2" Condition="2" Plmn = "466 FFF" />
+
+    <!-- HongKong -->
+    <EccEntry Ecc="110" Category="0" Condition="2" Plmn = "454 FFF" />
+    <EccEntry Ecc="999" Category="0" Condition="2" Plmn = "454 FFF" />
+
+    <!-- Bangladesh -->
+    <EccEntry Ecc="199" Category="0" Condition="2" Plmn = "470 FFF" />
+    <EccEntry Ecc="999" Category="0" Condition="2" Plmn = "470 FFF" />
+
+    <!-- United Arab Emirates -->
+    <EccEntry Ecc="997" Category="0" Condition="2" Plmn = "424 FFF" />
+    <EccEntry Ecc="998" Category="0" Condition="2" Plmn = "424 FFF" />
+    <EccEntry Ecc="999" Category="0" Condition="2" Plmn = "424 FFF" />
+    <!-- vivo add by yiyuanlin for Emergency Number end -->
+
+    <!-- 3GPP 22.101 -->
+    <EccEntry Ecc="112" Category="0" Condition="1" />
+    <EccEntry Ecc="911" Category="0" Condition="1" />
+    <EccEntry Ecc="110" Category="0" Condition="0" />
+    <EccEntry Ecc="119" Category="0" Condition="0" />
+    <EccEntry Ecc="999" Category="0" Condition="0" />
+</EccTable>

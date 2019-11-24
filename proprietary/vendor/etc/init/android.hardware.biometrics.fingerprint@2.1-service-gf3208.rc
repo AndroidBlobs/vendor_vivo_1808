@@ -1,0 +1,22 @@
+on property:sys.fingerprint.boot=goodix_3208
+    chown system system /dev/goodix_fp
+    chmod 0644 /dev/goodix_fp
+    enable biometrics-fingerprint-gf3208
+
+# Notified from gf3208-restart-counter-sh
+on property:sys.fingerprint.stop=biometrics-fingerprint-gf3208
+    stop biometrics-fingerprint-gf3208
+
+service biometrics-fingerprint-gf3208 /vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service-gf3208
+    class late_start
+    user system
+    group system input
+    onrestart restart gf3208-restart-counter-sh
+	disabled
+
+# Make sys.fingerprint.reboottimes +1
+service gf3208-restart-counter-sh /system/vendor/bin/sh /vendor/bin/init.vivo.fingerprint_restart_counter.sh biometrics-fingerprint-gf3208 5
+    user system
+    group system
+    disabled
+    oneshot

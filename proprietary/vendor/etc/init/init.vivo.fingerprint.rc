@@ -1,0 +1,19 @@
+###############################################################
+# Fingerprint launcher
+# NOTE: This file name should sort before fingerprint hwbinder
+# start rc since post-fs-data must launcher before the sub dir
+# to create.
+#
+
+# The trigger MUST before fingerprint hwbinder service start.
+on early-fs
+    setprop persist.sys.fptype ""
+    start vivo-fingerprint-sh
+
+# All hal should start after this service. And it will set persist.sys.fptype and
+# sys.fingerprint.boot which will enable specific fingerprint hal service.
+service vivo-fingerprint-sh /system/vendor/bin/sh /vendor/bin/init.vivo.fingerprint.sh
+    class early_hal
+    disabled
+    user root
+    oneshot

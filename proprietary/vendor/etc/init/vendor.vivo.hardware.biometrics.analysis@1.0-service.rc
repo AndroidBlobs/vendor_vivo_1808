@@ -1,0 +1,13 @@
+# Copyright (C) 2017 The Android Open Source Project
+#
+
+on post-fs-data
+    mkdir /data/vendor/misc/analysis 0770 system system
+
+#socket analysis_remote stream 0666 system system
+service analysis-service /vendor/bin/hw/vendor.vivo.hardware.biometrics.analysis@1.0-service
+    class early_hal
+    user system
+    group system misc
+    ioprio rt 4
+    writepid /dev/cpuset/foreground/tasks

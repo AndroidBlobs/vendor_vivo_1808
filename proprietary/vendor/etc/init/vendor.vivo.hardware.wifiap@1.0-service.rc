@@ -1,0 +1,4 @@
+service vivo-wifiap-hal-1-0 /vendor/bin/hw/vendor.vivo.hardware.wifiap@1.0-service
+    class hal
+    user system wifi
+    group system wifi net_raw net_admin
