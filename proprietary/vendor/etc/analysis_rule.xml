@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Copyright (C) 2018 The Android Open Source Project
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<AnalysisRule version="1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <!-- Rule for fingerprint -->
+    <rules class="fingerprint" enabled="true">
+        <rule name="authenticated" type="data">
+            <events>
+                <event name="image_quality"/>
+                <event name="image_coverage"/>
+                <event name="verify_score"/>
+                <event name="verify_retry"/>
+            </events>
+        </rule>
+
+        <rule name="showShooter" type="performance">
+            <events>
+                <event name="requireShowShooter"/>
+                <event name="shooterShown"/>
+            </events>
+        </rule>
+
+        <rule name="unlockScreenOff" type="performance">
+            <events>
+                <event name="fingerprintWake" flags="begin"/>
+                <event name="hideKeyguardByFingerprint"/>
+                <event name="requireShowShooter" flags="optional"/>
+                <event name="displayInit" flags="pairable"/>
+                <event name="shooterShown" flags="optional"/>
+                <event name="authenticated"/>
+                <event name="authenticatedTimeout" flags="cancelled|optional"/>
+                <event name="windowReady" flags="optional"/>
+                <event name="wakeUp" flags="pairable"/>
+                <event name="dismissColorFade" flags="nail"/>
+                <event name="setColorFadeLevel"/>
+                <event name="brightnessUpdate"/>
+                <event name="applyBrightness"/>
+                <event name="highlightMaskRemoved" flags="optional"/>
+                <event name="wakeUpIntercept" flags="cancelled|optional"/>
+                <event name="wakeUpHookCancelled" flags="cancelled|optional"/>
+                <event name="light" flags="pairable|over"/>
+            </events>
+        </rule>
+    </rules>
+    <!--xi:include href="analysis_rule_sub.xml"/-->
+</AnalysisRule>
